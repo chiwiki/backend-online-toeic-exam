@@ -82,7 +82,7 @@ class ExamService {
     if (user_id) {
       for (let i = 0; i < exams.length; i++) {
         const resultExam = await ExamResult.findOne({
-          user: exams[i]._id,
+          exam: exams[i]._id,
           user: user_id,
         });
         if (resultExam) {
@@ -98,5 +98,6 @@ class ExamService {
       .lean();
     return exam;
   }
+  static async editExam({ examId }) {}
 }
 module.exports = ExamService;
